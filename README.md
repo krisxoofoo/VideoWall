@@ -12,6 +12,7 @@ Demo kris : http://test.xoofoo.org/videowall/
 
 ### INSTALLATION
 - Download a copy from https://github.com/krisxoofoo/VideoWall/zipball/master and unpack it on your webserver.
+- Per line, add video code and description (separated by a semicolon) in videos.txt, 
 - Open your web browser and go to the script at http://www.yourdomain.com/index.php
 - That's it. If you want to configure the script see next chapters.
 
