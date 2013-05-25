@@ -42,7 +42,7 @@ class cache {
 		rename($cache_file_name . '_tmp',$cache_file_name);
 	}
 }
-//$cache = new cache();
+$cache = new cache();
 // SCRIPT
 error_reporting(0);
 // SETTINGS
@@ -60,9 +60,6 @@ $config['Author'] = '';
 $config['Channel Title'] = 'My Video Wall';
 $config['Channel Description'] = 'VideoWall by XooFoo';
 $config['Meta Keywords'] = 'gallery, video, youtube, holidays';
-//$config['Thumbnail Cropped'] = 'on';
-//$config['Thumbnail Quality'] = 80;
-//$config['Thumbnail Size'] = 'normal';
 $config['Thumbnail Background'] = 'black';
 $config['Embedded Script'] = 'off';
 $config['Other JS'] = '';
@@ -78,24 +75,9 @@ $config['Custom HTML'] = '';
 $config['Home Page'] = 'localhost';
 $config['Contact'] = '';
 $config['Imprint'] = '';
-//$config['Videos List'] = '';
 $config['Disqus Shortname'] = '';
 $config['GoogleAnalytics Account'] = '';
 $config['Per Page'] = '24';
-$set['image overlay'] = 'R0lGODlhIAAgAJEAAAAAADMzMyEhIQAAACH5BAQUAP8ALAAAAAAgACAAAAJvTACGmtfrGBMCUVvB1Xn7DIXPKEUmhnLptwql+JKnSrN1hyPwHPeODczdfLviKNhK0oxEmQh5U1Ka1Bn0KmTytk8htlXVdqXess6JDkfXWLX6y86muXOyfUh3/8xxpbiOBteWRzjWd7jxp3cnKFAAADs=';
-// VIDEOS list
-$videos = array();
-$i = 0;
-$videos[$i] = array('SaVvwHGRt68','Présentation de mods ep 1');
-$i++;
-$videos[$i] = array('6MEb3UDYn1c','Visite du serveur FerdiCraft - partie 1');
-$i++;
-$videos[$i] = array('be9hfvL4jUQ','too many items pour les nuls');
-$i++;
-$videos[$i] = array('be9hfvL4jUQ','too many items pour les nuls');
-$i++;
-$videos[$i] = array('be9hfvL4jUQ','too many items pour les nuls');
-
 // SET CONFIG
 if(is_file($set['config file']) && is_readable($set['config file'])) {
 	// Get config from Config File
@@ -216,7 +198,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 		img {max-width: 100%;}
 		body { margin: 15px 25px; background: <?php echo $config['Background']; ?>; text-align: center; font: 12px 'Trebuchet MS', Arial, Helvetica, sans-serif; color: <?php echo $config['Content Color']; ?>; }
 		header h1 {margin: 20px 20px 30px 20px;text-align: center;}
-		header h1 span {line-height:24px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
+		header h1 span {line-height:10px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		header h1 span a { text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		footer {clear:both; margin-top: 25px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
 		footer nav {font-size: 14px; padding: .5em 0; font-style: normal;}
@@ -267,15 +249,14 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<section id="imagewall-container">
 	<div class="popup-gallery">
 		<ul>
-<?php 
-
-foreach ($videos as $key=>$val) {
-	echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$videos[$key][0].'" title="'.$videos[$key][1].'">' .
-          		'<img src="http://i1.ytimg.com/vi/'.$videos[$key][0].'/default.jpg" alt="ScreenShot" />' .
-          				'<span class="figcaption">'.$videos[$key][1].'</span></a></li>');
+<?php
+	$Videos = file("videos.txt");
+	for ($i=0;$i<count($Videos);$i++)
+	{ $key = explode(";",$Videos[$i]);
+		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'">' .
+          		'<img src="http://i1.ytimg.com/vi/'.$key[0].'/default.jpg" alt="ScreenShot" />' .
+          				'<span class="figcaption">'.$key[1].'</span></a></li>');
 	}
-unset($key);
-unset($val);
 ?>
 			</ul>
 		</div>
