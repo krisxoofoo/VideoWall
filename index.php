@@ -83,8 +83,6 @@ $config['Disqus Shortname'] = '';
 $config['GoogleAnalytics Account'] = '';
 $config['Per Page'] = '24';
 $set['image overlay'] = 'R0lGODlhIAAgAJEAAAAAADMzMyEhIQAAACH5BAQUAP8ALAAAAAAgACAAAAJvTACGmtfrGBMCUVvB1Xn7DIXPKEUmhnLptwql+JKnSrN1hyPwHPeODczdfLviKNhK0oxEmQh5U1Ka1Bn0KmTytk8htlXVdqXess6JDkfXWLX6y86muXOyfUh3/8xxpbiOBteWRzjWd7jxp3cnKFAAADs=';
-
-
 // VIDEOS list
 $videos = array();
 $i = 0;
@@ -220,7 +218,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 		header h1 {margin: 20px 20px 30px 20px;text-align: center;}
 		header h1 span {line-height:24px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		header h1 span a { text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
-		footer {clear:both; margin-top: 15px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
+		footer {clear:both; margin-top: 25px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
 		footer nav {font-size: 14px; padding: .5em 0; font-style: normal;}
 		footer, footer a { text-decoration: none; color: <?php echo $config['Footer Color']; ?>; }
 	</style>
@@ -229,18 +227,19 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 		/* GALLERY */
 		.mfp-bg { background: #0b0b0b url('<?php echo $set['script name']; ?>?symbol=overlay') repeat !important; }
 		#imagewall { max-width: <?php echo $config['ChannelWall Width']; ?>; margin: 0 auto; text-align: center; line-height: 0; font-size: 0; }
-		#imagewall a, #imagewall a:hover {color:#999;text-decoration:none;}
+		#imagewall a, #imagewall a:hover {text-decoration:none;}
 		
 		.popup-gallery ul { list-style:none;}
 		
 		.figure {float:left; display: inline;font-size: 12px; line-height: 1.4;text-align: center; margin:1.5em;}
 		.figure img {-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); display: block;margin: 0 auto 1em; width:260px; height:145px;}
 		.figure img:hover { opacity:.5;cursor: pointer;cursor: -webkit-zoom-in;cursor: -moz-zoom-in;cursor: zoom-in; }
-
+		.figcaption {color:#999;}
 		#mulit {clear:both; font-size:12px;text-align:center;padding: 20px 0 10px 0;margin: 10px 0 10px 0;}
 		#mulit li {list-style:none;}
 		#mulit em {border: solid 1px #ccc;padding: 2px 7px;margin: 0 3px 0 0;}
 		#mulit .current {border: solid 1px #7dc0d1;color:#7dc0d1;}
+		#mulit a {color:#999;text-decoration:none;}
 	</style>
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/zepto-tooltip.css" />
