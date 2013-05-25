@@ -78,6 +78,7 @@ $config['Imprint'] = '';
 $config['Disqus Shortname'] = '';
 $config['GoogleAnalytics Account'] = '';
 $config['Per Page'] = '24';
+$videos = file("videos.txt");
 // SET CONFIG
 if(is_file($set['config file']) && is_readable($set['config file'])) {
 	// Get config from Config File
@@ -250,9 +251,8 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<div class="popup-gallery">
 		<ul>
 <?php
-	$Videos = file("videos.txt");
-	for ($i=0;$i<count($Videos);$i++)
-	{ $key = explode(";",$Videos[$i]);
+	for ($i=0;$i<count($videos);$i++)
+	{ $key = explode(";",$videos[$i]);
 		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'">' .
           		'<img src="http://i1.ytimg.com/vi/'.$key[0].'/default.jpg" alt="ScreenShot" />' .
           				'<span class="figcaption">'.$key[1].'</span></a></li>');
