@@ -78,6 +78,7 @@ $config['Imprint'] = '';
 $config['Disqus Shortname'] = '';
 $config['GoogleAnalytics Account'] = '';
 $config['Per Page'] = '24';
+$set['image overlay'] = 'R0lGODlhIAAgAJEAAAAAADMzMyEhIQAAACH5BAQUAP8ALAAAAAAgACAAAAJvTACGmtfrGBMCUVvB1Xn7DIXPKEUmhnLptwql+JKnSrN1hyPwHPeODczdfLviKNhK0oxEmQh5U1Ka1Bn0KmTytk8htlXVdqXess6JDkfXWLX6y86muXOyfUh3/8xxpbiOBteWRzjWd7jxp3cnKFAAADs=';
 $videos = file("videos.txt");
 // SET CONFIG
 if(is_file($set['config file']) && is_readable($set['config file'])) {
@@ -195,7 +196,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<link rel="help" title="VideoWall Channel" href="https://github.com/krisxoofoo/VideoWall/" />
 	<style type="text/css">
 		* { margin:0;padding:0;border:0;}
-		html { height: 100%;}
+		html{ height: 100%;}
 		img {max-width: 100%;}
 		body { margin: 15px 25px; background: <?php echo $config['Background']; ?>; text-align: center; font: 12px 'Trebuchet MS', Arial, Helvetica, sans-serif; color: <?php echo $config['Content Color']; ?>; }
 		header h1 {margin: 20px 20px 30px 20px;text-align: center;}
@@ -208,14 +209,14 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <?php } ?>
 	<style type="text/css">
 		/* GALLERY */
-		.mfp-bg { background: #0b0b0b url('<?php echo $set['script name']; ?>?symbol=overlay') repeat !important; }
+		.mfp-bg { background: #0b0b0b url('<?php echo $set['script name']; ?>?symbol=overlay') repeat top left !important; }
 		#imagewall { max-width: <?php echo $config['ChannelWall Width']; ?>; margin: 0 auto; text-align: center; line-height: 0; font-size: 0; }
 		#imagewall a, #imagewall a:hover {text-decoration:none;}
 		
 		.popup-gallery ul { list-style:none;}
 		
 		.figure {float:left; display: inline;font-size: 12px; line-height: 1.4;text-align: center; margin:1.5em;}
-		.figure img {-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); display: block;margin: 0 auto 1em; width:260px; height:145px;}
+		.figure img {-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); display: block;margin: 0 auto 1em; width:260px; height:195px;}
 		.figure img:hover { opacity:.5;cursor: pointer;cursor: -webkit-zoom-in;cursor: -moz-zoom-in;cursor: zoom-in; }
 		.figcaption {color:#999;}
 		#mulit {clear:both; font-size:12px;text-align:center;padding: 20px 0 10px 0;margin: 10px 0 10px 0;}
