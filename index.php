@@ -130,12 +130,12 @@ function mulit($count, $page, $perpage) {
 	while($allpage) {
 		$class = '';
 		if ($i == $page) {
-			$class = 'class = "current"'; 
+			$class = ' class="current"'; 
 		}
 		if ($dir) {
-			$pager .= "<a href='?dir=$dir&page=$i' ><em $class>";
+			$pager .= "<a href='?dir=$dir&page=$i' ><em$class>";
 		} else {
-			$pager .= "<a rel='tooltip' href='?page=$i' title='Go to page $i'><em $class>";    
+			$pager .= "<a rel='tooltip' href='?page=$i' title='Go to page $i'><em$class>";    
 		}
 		$pager .= "$i";
 		$pager .= "</em></a>";
@@ -195,26 +195,23 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<link rel="start" title="Home Page" href="<?php echo $config['Home Page']; ?>" />
 	<link rel="help" title="VideoWall Channel" href="https://github.com/krisxoofoo/VideoWall/" />
 	<style type="text/css">
-		* { margin:0;padding:0;border:0;}
-		html{ height: 100%;}
-		img {max-width: 100%;}
+		html { height: 100%;}
+		* {  margin: 0; padding: 0;}
+		article, aside, figure, footer, header, hgroup, nav, section {  display:block;}
 		body { margin: 15px 25px; background: <?php echo $config['Background']; ?>; text-align: center; font: 12px 'Trebuchet MS', Arial, Helvetica, sans-serif; color: <?php echo $config['Content Color']; ?>; }
 		header h1 {margin: 20px 20px 30px 20px;text-align: center;}
-		header h1 span {line-height:10px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
+		header h1 span {line-height:22px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		header h1 span a { text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
-		footer {clear:both; margin-top: 25px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
+		footer { margin-top: 15px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
 		footer nav {font-size: 14px; padding: .5em 0; font-style: normal;}
 		footer, footer a { text-decoration: none; color: <?php echo $config['Footer Color']; ?>; }
 	</style>
 <?php } ?>
 	<style type="text/css">
 		/* GALLERY */
-		.mfp-bg { background: #0b0b0b url('<?php echo $set['script name']; ?>?symbol=overlay') repeat top left !important; }
 		#imagewall { max-width: <?php echo $config['ChannelWall Width']; ?>; margin: 0 auto; text-align: center; line-height: 0; font-size: 0; }
 		#imagewall a, #imagewall a:hover {text-decoration:none;}
-		
-		.popup-gallery ul { list-style:none;}
-		
+		.gallery ul { list-style:none;}
 		.figure {float:left; display: inline;font-size: 12px; line-height: 1.4;text-align: center; margin:1.5em;}
 		.figure img {-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); display: block;margin: 0 auto 1em; width:260px; height:195px;}
 		.figure img:hover { opacity:.5;cursor: pointer;cursor: -webkit-zoom-in;cursor: -moz-zoom-in;cursor: zoom-in; }
@@ -223,7 +220,8 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 		#mulit li {list-style:none;}
 		#mulit em {border: solid 1px #ccc;padding: 2px 7px;margin: 0 3px 0 0;}
 		#mulit .current {border: solid 1px #7dc0d1;color:#7dc0d1;}
-		#mulit a {color:#999;text-decoration:none;}
+		#mulit a {color:#999;text-decoration:none;}	
+		.mfp-fade { background: #0b0b0b url('<?php echo $set['script name']; ?>?symbol=overlay') repeat !important;  height:100% !important;}
 	</style>
 	<link rel="stylesheet" href="css/magnific-popup.css" />
 	<link rel="stylesheet" href="css/zepto-tooltip.css" />
@@ -249,25 +247,21 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 	<?php } ?>
 <?php } ?>
 	<section id="imagewall-container">
-	<div class="popup-gallery">
+	<div class="gallery">
 		<ul>
 <?php
 	for ($i=0;$i<count($videos);$i++)
 	{ $key = explode(";",$videos[$i]);
-		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'">' .
-          		'<img src="http://i1.ytimg.com/vi/'.$key[0].'/default.jpg" alt="ScreenShot" />' .
-          				'<span class="figcaption">'.$key[1].'</span></a></li>');
+		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'"><img src="http://i1.ytimg.com/vi/'.$key[0].'/default.jpg" alt="ScreenShot" /><span class="figcaption">'.$key[1].'</span></a></li>');
 	}
 ?>
 			</ul>
 		</div>
 		<?php if($mulit) echo $mulit;?>
 		<?php if(!empty($config['Disqus Shortname'])) { ?>
-		<!-- disqus -->
 		<div id="disqus_thread"></div>
 		<script>
 			var disqus_shortname = '<?php echo $config['Disqus Shortname']; ?>';
-			/* * * DON'T EDIT BELOW THIS LINE * * */
 			(function() {
 				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 				dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
@@ -297,29 +291,28 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <script src="js/jquery.magnific-popup.min.js"></script>
 <?php if(!empty($config['Other JS'])) { ?><script src="<?php echo $config['Other JS']; ?>"></script><?php } ?>
 <script type="text/javascript">
-  $(document).ready(function() {
-	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-	  disableOn: 700,
-	  type: 'iframe',
-	  mainClass: 'mfp-fade',
-	  removalDelay: 160,
-	  preloader: false,
-	  fixedContentPos: false
+	$(document).ready(function() {
+		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+			fixedContentPos: false
+		});
 	});
-  });
 </script>
 <?php if(!empty($config['GoogleAnalytics Account'])) { ?>
 <script>
-<!-- ga -->
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<?php echo $config['GoogleAnalytics Account']; ?>']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+	var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', '<?php echo $config['GoogleAnalytics Account']; ?>']);
+		_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		}
+	();
 </script>
 <?php } ?>
 <?php if($config['Embedded Script'] == 'off') { ?></body></html><?php } else $set = null; ?>
