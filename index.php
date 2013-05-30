@@ -200,7 +200,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 		article, aside, figure, footer, header, hgroup, nav, section {  display:block;}
 		body { margin: 15px 25px; background: <?php echo $config['Background']; ?>; text-align: center; font: 12px 'Trebuchet MS', Arial, Helvetica, sans-serif; color: <?php echo $config['Content Color']; ?>; }
 		header h1 {margin: 20px 20px 30px 20px;text-align: center;}
-		header h1 span {line-height:22px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
+		header h1 span {line-height:12px;font-size: 24px;display: block; padding-top:20px; font-weight: 400;text-shadow: 0 1px 1px #fff;text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		header h1 span a { text-decoration: none;color: <?php echo $config['Header Color']; ?>;}
 		footer { margin-top: 15px; margin-bottom: 25px;height:80px;font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 11px; font-style: italic; text-align:center; line-height:1.6em; }
 		footer nav {font-size: 14px; padding: .5em 0; font-style: normal;}
