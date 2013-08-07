@@ -252,7 +252,7 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 <?php
 	for ($i=0;$i<count($videos);$i++)
 	{ $key = explode(";",$videos[$i]);
-		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'"><img src="http://i1.ytimg.com/vi/'.$key[0].'/default.jpg" alt="ScreenShot" /><span class="figcaption">'.$key[1].'</span></a></li>');
+		echo('<li class="figure"><a rel="tooltip"  class="popup-youtube" href="http://www.youtube.com/watch?v='.$key[0].'" title="'.$key[1].'"><img src="http://img.youtube.com/vi/'.$key[0].'/0.jpg" alt="ScreenShot" /><span class="figcaption">'.$key[1].'</span></a></li>');
 	}
 ?>
 			</ul>
