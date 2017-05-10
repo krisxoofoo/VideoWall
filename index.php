@@ -1,7 +1,6 @@
 <?php
 /*
-	VideoWall Web Gallery by kris - http://www.xoofoo.org
-	Based on Pagemap Premium Portfolios (http://getpagemap.com/pagemap-imagewall/).
+	VideoWall Web Gallery by kris - https://xoofoo.org
 	All Rights reserved.
 */
 /* add little cache - credits: Rafael Paulino - http://www.phpclasses.org/package/5595-PHP-Cache-the-output-of-pages-into-files.html */
@@ -276,8 +275,8 @@ if($config['Embedded Script'] == 'off' || headers_sent() == false) header('conte
 
 <?php if($config['Embedded Script'] == 'off') { ?>
 	<footer>
-		<nav><?php if(!empty($config['Home Page'])) { ?><a rel="tooltip" href="<?php echo $config['Home Page']; ?>" title="Go to the home page">Home</a><?php } ?><?php if(!empty($config['Contact'])) { ?> • <a rel="tooltip" href="<?php echo $config['Contact']; ?>" title="Contact us">Contact</a><?php } ?><?php if(!empty($config['Imprint'])) { ?> • <a rel="tooltip" href="<?php echo $config['Imprint']; ?>" title="Imprint this page">Imprint</a> <?php } ?></nav><?php if(!empty($config['Author'])) { ?><p>Videos by <strong><?php echo $config['Author']; ?></strong> - Copyright © 2013 - All rights reserved.</p><?php } ?>
-		<p>Powered by <a rel="tooltip" href="https://github.com/krisxoofoo/VideoWall" title="A free web channel script for videos websites"><strong>VideoWall</strong></a> by <a rel="tooltip" href="http://www.xoofoo.org/" title="XooFoo Websites"><strong>XooFoo</strong></a> based on <a rel="tooltip" href="http://getpagemap.com/pagemap-imagewall/" title="A free web gallery script for portfolio websites"><strong>Pagemap Imagewall</strong></a></p>
+		<nav><?php if(!empty($config['Home Page'])) { ?><a rel="tooltip" href="<?php echo $config['Home Page']; ?>" title="Go to the home page">Home</a><?php } ?><?php if(!empty($config['Contact'])) { ?> • <a rel="tooltip" href="<?php echo $config['Contact']; ?>" title="Contact us">Contact</a><?php } ?><?php if(!empty($config['Imprint'])) { ?> • <a rel="tooltip" href="<?php echo $config['Imprint']; ?>" title="Imprint this page">Imprint</a> <?php } ?></nav><?php if(!empty($config['Author'])) { ?><p>Videos by <strong><?php echo $config['Author']; ?></strong> - Copyright © 2017 - All rights reserved.</p><?php } ?>
+		<p>Powered by <a rel="tooltip" href="https://github.com/krisxoofoo/VideoWall" title="A free web channel script for videos websites"><strong>VideoWall</strong></a> by <a rel="tooltip" href="https://xoofoo.org/" title="XooFoo Websites"><strong>XooFoo</strong></a> based on <strong>Pagemap Imagewall</strong></p>
 	</footer>
 <?php } ?>
 

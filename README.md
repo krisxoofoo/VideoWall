@@ -4,7 +4,7 @@ VideoWall
 ### ABOUT
 VideoWall is a web video gallery script, free for private and commercial use, and developed by Kris, on the basis of Pagemap Premium Portfolios in Germany
 
-Demo kris : http://test.xoofoo.org/videowall/
+Demo kris : https://xoofoo.org/demo/videowall/
 
 ### SYSTEM REQUIREMENTS
 - Apache Webserver (recommended) or IIS
@@ -39,7 +39,6 @@ You are allows to:
 - Customize the function and design
 
 You are NOT allowed to:
-- Delete the link to getpagemap.com in the footer
 - Claim the script as your own
 - Sale parts of the script
 
